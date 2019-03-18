@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+  <li><h1><a href="{{ url_for('volume', up_down=1) }} ">Volume Up</a></h1></li>
+  <li><h1><a href="{{ url_for('volume', up_down=0) }} ">Volume Down</a></h1></li>
+  <li>Current Volume is {{ value }}</li>
+  <li>{{ status }}</li>
+{% endblock %}

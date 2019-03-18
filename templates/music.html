@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+  <li><h1><a href="{{ url_for('music_set', status=2) }} ">Toggle Music</a></h1></li>
+  <li><h1><a href="{{ url_for('music_set', status=1) }} ">Play Music</a></h1></li>
+  <li><h1><a href="{{ url_for('music_set', status=0) }} ">Pause Music</a></h1></li>
+
+  <li>Status: {{ value }}</li>
+  <li>{{ status }}</li>
+
+{% endblock %}
