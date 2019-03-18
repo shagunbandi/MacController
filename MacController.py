@@ -1,6 +1,9 @@
 from flask import Flask
 from flask import render_template
 import os
+# from pynput.keyboard import Key, Controller
+
+
 app = Flask(__name__)
 
 volume_level = 3
@@ -10,7 +13,6 @@ play_status = 0
 @app.route('/')
 def home():
    return render_template("main.html")
-
 
 
 @app.route('/music')
@@ -51,9 +53,6 @@ def volume_no_par():
 	return render_template("volume.html", value="", status="Ready")
 
 
-# osascript -e 'tell application "iTunes" to play'
-
-
 @app.route('/volume/<up_down>')
 def volume(up_down):
 	global volume_level
@@ -74,7 +73,66 @@ def volume(up_down):
 
 	return render_template("volume.html", value=volume_level, status=status)
 
+
+@app.route('/youtube')
+def youtube():
+	return render_template("youtube.html", status="Ready")
+
+
+# https://eastmanreference.com/complete-list-of-applescript-key-codes
+
+
+@app.route('/move_left')
+def move_left():
+	
+	command = 'tell application "System Events" to key code 123 using {option down, command down}'
+	command = "osascript -e '" + command + "'"
+	print(command)
+	os.system(command)	
+
+	return render_template("youtube.html", status="Moving Left")
+
+
+@app.route('/move_right')
+def move_right():
+	
+	command = 'tell application "System Events" to key code 124 using {option down, command down}'
+	command = "osascript -e '" + command + "'"
+	print(command)
+	os.system(command)	
+
+	return render_template("youtube.html", status="Moving Right")
+
+
+@app.route('/youtube_toggle')
+def youtube_toggle():
+	
+	command = 'tell application "System Events" to key code 40'
+	command = "osascript -e '" + command + "'"
+	
+	print(command)
+	os.system(command)	
+
+	return render_template("youtube.html", status="Toggle Music")
+
+
 if __name__ == '__main__':
 	command = 'osascript -e "set Volume 3"'
 	os.system(command)
 	app.run('0.0.0.0')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
