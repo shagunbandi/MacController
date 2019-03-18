@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+  <li><h1><a href="{{ url_for('inc_brightnes') }} ">Dimmer</a></h1></li>
+  <li><h1><a href="{{ url_for('dec_brightnes') }} ">Brighter</a></h1></li>
+
+  <li>Status: {{ status }}</li>
+
+{% endblock %}

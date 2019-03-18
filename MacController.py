@@ -116,6 +116,33 @@ def youtube_toggle():
 	return render_template("youtube.html", status="Toggle Music")
 
 
+@app.route('/brightness')
+def brightness():
+	return render_template("brightness.html", status="Ready")
+
+
+@app.route('/inc_brightnes')
+def inc_brightnes():
+
+	command = 'tell application "System Events" to key code 113'
+	command = "osascript -e '" + command + "'"
+	print(command)
+	os.system(command)	
+
+	return render_template("brightness.html", status="Dimming")
+
+
+@app.route('/dec_brightnes')
+def dec_brightnes():
+
+	command = 'tell application "System Events" to key code 107'
+	command = "osascript -e '" + command + "'"
+	print(command)
+	os.system(command)	
+
+	return render_template("brightness.html", status="Brighter")
+
+
 if __name__ == '__main__':
 	command = 'osascript -e "set Volume 3"'
 	os.system(command)
