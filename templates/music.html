@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-  <li><h1><a href="{{ url_for('music_set', status=2) }} ">Toggle Music</a></h1></li>
-  <li><h1><a href="{{ url_for('music_set', status=1) }} ">Play Music</a></h1></li>
-  <li><h1><a href="{{ url_for('music_set', status=0) }} ">Pause Music</a></h1></li>
-
-  <li>Status: {{ value }}</li>
-  <li>{{ status }}</li>
+  <a href="{{ url_for('music_set', status=2) }} "><div class="full green"><h1>Toggle Music</h1></div></a>
+  <a href="{{ url_for('music_set', status=1) }} "><div class="full blue"><h1>Play Music</h1></div></a>
+  <a href="{{ url_for('music_set', status=0) }} "><div class="full red"><h1>Pause Music</h1></div></a>
+  <a href="{{ url_for('next_song') }} "><div class="full blue"><h1>Next Song</h1></div></a>
+  <a href="{{ url_for('prev_song') }} "><div class="full green"><h1>Prev Song</h1></div></a>
 
 {% endblock %}

@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <li><h1><a href="{{ url_for('move_left') }} ">Move Left</a></h1></li>
-  <li><h1><a href="{{ url_for('move_right') }} ">Move Right</a></h1></li>
-  <li><h1><a href="{{ url_for('youtube_toggle') }} ">Toggle Youtube</a></h1></li>
+  <a href="{{ url_for('move_left') }} "><div class="full green"><h1>Move Left</h1></div></a>
+  <a href="{{ url_for('move_right') }} "><div class="full blue"><h1>Move Right</h1></div></a>
+  <a href="{{ url_for('youtube_toggle') }} "><div class="full red"><h1>Toggle Youtube</h1></div></a>
 
   <li>Status: {{ status }}</li>
 

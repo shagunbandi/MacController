@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request, jsonify
 import os
 # from pynput.keyboard import Key, Controller
 
@@ -18,6 +18,29 @@ def home():
 @app.route('/music')
 def music_toggle():
 	return render_template("music.html", value="Ready", status="Done")
+
+
+@app.route('/next_song')
+def next_song():
+	command = 'tell application "iTunes" to next track'
+	command = "osascript -e '" + command + "'"
+
+	print(command)
+	os.system(command)	
+
+	return render_template("music.html", status="Next Song Bringing right up")
+
+
+@app.route('/prev_song')
+def prev_song():
+	command = 'tell application "iTunes" to previous track'
+	command = "osascript -e '" + command + "'"
+
+	print(command)
+	os.system(command)	
+
+	return render_template("music.html", status="Bringn' back the previous song")
+
 
 
 @app.route('/music/<status>')
@@ -141,6 +164,7 @@ def dec_brightnes():
 	os.system(command)	
 
 	return render_template("brightness.html", status="Brighter")
+
 
 
 if __name__ == '__main__':

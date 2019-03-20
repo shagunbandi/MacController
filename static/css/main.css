@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    border: 1px solid black;
+}
+
+a {
+	text-decoration: none;
+}
+
+.full {
+	margin: 0;
+    padding: 10px;
+    color: #ecf9ec;
+    border: 1px solid black;
+    text-align: center ;
+    color: black ;
+}
+
+.green {
+	background-color: rgba(0, 128, 0, 0.5);
+}
+
+.red {
+	background-color: rgba(128, 0, 0, 0.5);
+}
+
+.blue {
+	background-color: rgba(0, 0, 128, 0.5);
+}
+
+

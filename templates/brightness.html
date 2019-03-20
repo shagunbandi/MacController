@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-  <li><h1><a href="{{ url_for('inc_brightnes') }} ">Dimmer</a></h1></li>
-  <li><h1><a href="{{ url_for('dec_brightnes') }} ">Brighter</a></h1></li>
+  <a href="{{ url_for('inc_brightnes') }} "><div class="full green"><h1>Dimmer</h1></div></a>
+  <a href="{{ url_for('dec_brightnes') }} "><div class="full red"><h1>Brighter</h1></div></a>
 
   <li>Status: {{ status }}</li>
 
