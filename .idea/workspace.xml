@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd0a4092-a1ee-49b7-a338-aef58d0405bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/fanoff.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/fanon.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/lightoff.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/lighton.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picontrol.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MacController.py" afterPath="$PROJECT_DIR$/MacController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html" afterPath="$PROJECT_DIR$/templates/layout.html" />
     </list>
     <ignored path="MacController.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MacController.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MacController.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MacController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="300">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -65,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fanon.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fanon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/fanon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,10 +146,10 @@
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/templates/picontrol.html" />
         <option value="$PROJECT_DIR$/lighton.py" />
-        <option value="$PROJECT_DIR$/MacController.py" />
         <option value="$PROJECT_DIR$/scripts/lightoff.py" />
         <option value="$PROJECT_DIR$/scripts/fanoff.py" />
         <option value="$PROJECT_DIR$/scripts/fanon.py" />
+        <option value="$PROJECT_DIR$/MacController.py" />
       </list>
     </option>
   </component>
@@ -583,16 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MacController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/lightoff.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -611,9 +592,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/fanon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

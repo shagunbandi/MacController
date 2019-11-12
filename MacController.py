@@ -20,24 +20,39 @@ def lights_on():
 
     print(command)
     os.system(command)
-    os.system("pwd")
 
     return render_template("picontrol.html", value="Ready", status="Lights On")
 
 
 @app.route('/lightsoff')
 def lights_off():
-	return render_template("picontrol.html", value="Ready", status="Lights Off")
+    command = "python scripts/lightoff.py"
+
+    print(command)
+    os.system(command)
+
+    return render_template("picontrol.html", value="Ready", status="Lights Off")
 
 
 @app.route('/fanon')
 def fan_on():
-	return render_template("picontrol.html", value="Ready", status="Fan On")
+    command = "python scripts/fanon.py"
+
+    print(command)
+    os.system(command)
+
+    return render_template("picontrol.html", value="Ready", status="Fan On")
 
 
 @app.route('/fanoff')
 def fan_off():
-	return render_template("picontrol.html", value="Ready", status="Fan Off")
+
+    command = "python scripts/fanoff.py"
+
+    print(command)
+    os.system(command)
+
+    return render_template("picontrol.html", value="Ready", status="Fan Off")
 
 
 @app.route('/')
