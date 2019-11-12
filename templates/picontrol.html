@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
   <a href="{{ url_for('lights_on') }} "><div class="full green"><h1>Lights On</h1></div></a>
-  <a href="{{ url_for('lights_off') }} "><div class="full grey"><h1>Lights Off</h1></div></a>
+  <a href="{{ url_for('lights_off') }} "><div class="full lightgreen"><h1>Lights Off</h1></div></a>
   <a href="{{ url_for('fan_on') }} "><div class="full blue"><h1>Fan On</h1></div></a>
-  <a href="{{ url_for('fan_off') }} "><div class="full grey"><h1>Fan Off</h1></div></a>
+  <a href="{{ url_for('fan_off') }} "><div class="full lightblue"><h1>Fan Off</h1></div></a>
 
 {% endblock %}
