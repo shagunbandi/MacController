@@ -9,6 +9,36 @@ app = Flask(__name__)
 volume_level = 3
 play_status = 0
 
+@app.route('/pihome')
+def pihome():
+	return render_template("picontrol.html", value="Ready", status="Control Fan and Lights")
+
+
+@app.route('/lightson')
+def lights_on():
+    command = "python scripts/lighton.py"
+
+    print(command)
+    os.system(command)
+    os.system("pwd")
+
+    return render_template("picontrol.html", value="Ready", status="Lights On")
+
+
+@app.route('/lightsoff')
+def lights_off():
+	return render_template("picontrol.html", value="Ready", status="Lights Off")
+
+
+@app.route('/fanon')
+def fan_on():
+	return render_template("picontrol.html", value="Ready", status="Fan On")
+
+
+@app.route('/fanoff')
+def fan_off():
+	return render_template("picontrol.html", value="Ready", status="Fan Off")
+
 
 @app.route('/')
 def home():

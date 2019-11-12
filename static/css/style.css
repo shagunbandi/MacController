@@ -8,9 +8,6 @@ body {
     color: #ecf9ec;
 }
 
-.half
-
-
 .green {
 	background-color: rgba(0, 128, 0, 0.5);
 }
@@ -21,4 +18,13 @@ body {
 
 .blue {
 	background-color: rgba(0, 0, 128, 0.5);
+}
+
+
+.lightblue {
+	background-color: rgba(0, 0, 128, 0.2);
+}
+
+.lightgreen {
+		background-color: rgba(0, 128, 0, 0.2);
 }

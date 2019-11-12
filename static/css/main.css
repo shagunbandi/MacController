@@ -28,4 +28,10 @@ a {
 	background-color: rgba(0, 0, 128, 0.5);
 }
 
+.lightblue {
+	background-color: rgba(0, 0, 128, 1);
+}
 
+.lightgreen {
+		background-color: rgba(0, 128, 0, 1);
+}
