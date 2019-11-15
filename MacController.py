@@ -19,9 +19,6 @@ def pihome():
 
 @app.route('/lightson')
 def lights_on():
-    # command = "python " + os.path.join(BASE_DIR, 'scripts/lighton.py')
-    # print(command)
-    # os.system(command)
 
     GPIO.setup(3, GPIO.OUT)
     GPIO.output(3, False)
@@ -31,10 +28,6 @@ def lights_on():
 
 @app.route('/lightsoff')
 def lights_off():
-    # command = "python " + os.path.join(BASE_DIR, 'scripts/lightoff.py')
-    #
-    # print(command)
-    # os.system(command)
 
     GPIO.setup(3, GPIO.OUT)
     GPIO.output(3, True)
@@ -44,10 +37,9 @@ def lights_off():
 
 @app.route('/fanon')
 def fan_on():
-    command = "python " + os.path.join(BASE_DIR, 'scripts/fanon.py')
 
-    print(command)
-    os.system(command)
+    GPIO.setup(2, GPIO.OUT)
+    GPIO.output(2, False)
 
     return render_template("picontrol.html", value="Ready", status="Fan On")
 
@@ -55,10 +47,8 @@ def fan_on():
 @app.route('/fanoff')
 def fan_off():
 
-    command = "python " + os.path.join(BASE_DIR, 'scripts/fanoff.py')
-
-    print(command)
-    os.system(command)
+    GPIO.setup(2, GPIO.OUT)
+    GPIO.output(2, True)
 
     return render_template("picontrol.html", value="Ready", status="Fan Off")
 
@@ -70,18 +60,18 @@ def home():
 
 @app.route('/music')
 def music_toggle():
-	return render_template("music.html", value="Ready", status="Done")
+    return render_template("music.html", value="Ready", status="Done")
 
 
 @app.route('/next_song')
 def next_song():
-	command = 'tell application "iTunes" to next track'
-	command = "osascript -e '" + command + "'"
+    command = 'tell application "iTunes" to next track'
+    command = "osascript -e '" + command + "'"
 
-	print(command)
-	os.system(command)	
+    print(command)
+    os.system(command)
 
-	return render_template("music.html", status="Next Song Bringing right up")
+    return render_template("music.html", status="Next Song Bringing right up")
 
 
 @app.route('/prev_song')
