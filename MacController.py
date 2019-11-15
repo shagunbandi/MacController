@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import render_template, request, jsonify
 import os
-# from pynput.keyboard import Key, Controller
+
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,19 +19,25 @@ def pihome():
 
 @app.route('/lightson')
 def lights_on():
-    command = "python " + os.path.join(BASE_DIR, 'scripts/lighton.py')
-    print(command)
-    os.system(command)
+    # command = "python " + os.path.join(BASE_DIR, 'scripts/lighton.py')
+    # print(command)
+    # os.system(command)
+
+    GPIO.setup(3, GPIO.OUT)
+    GPIO.output(3, False)
 
     return render_template("picontrol.html", value="Ready", status="Lights On")
 
 
 @app.route('/lightsoff')
 def lights_off():
-    command = "python " + os.path.join(BASE_DIR, 'scripts/lightoff.py')
+    # command = "python " + os.path.join(BASE_DIR, 'scripts/lightoff.py')
+    #
+    # print(command)
+    # os.system(command)
 
-    print(command)
-    os.system(command)
+    GPIO.setup(3, GPIO.OUT)
+    GPIO.output(3, True)
 
     return render_template("picontrol.html", value="Ready", status="Lights Off")
 
