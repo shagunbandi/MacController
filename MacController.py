@@ -12,6 +12,8 @@ volume_level = 3
 play_status = 0
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(2, GPIO.OUT)
+GPIO.setup(3, GPIO.OUT)
 
 gpio_status_dict = {
     3: False,
@@ -32,9 +34,7 @@ def pihome(gpio_pin=None, gpio_status=None):
     print(gpio_pin)
     print(gpio_status)
 
-    GPIO.setup(gpio_pin, GPIO.OUT)
-    GPIO.output(gpio_pin, gpio_status)
-    print("Here")
+    GPIO.output(gpio_pin, GPIO.HIGH if gpio_status else GPIO.LOW)
     gpio_status_dict[gpio_pin] = not gpio_status
 
     return render_template("picontrol.html", fan_status=gpio_status_dict[2], light_status=gpio_status_dict[3])
