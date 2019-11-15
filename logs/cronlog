@@ -1,0 +1,62 @@
+sh: 1: osascript: not found
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+192.168.1.7 - - [15/Nov/2019 13:24:12] "GET /lightson HTTP/1.1" 404 -
+192.168.1.7 - - [15/Nov/2019 13:24:16] "GET / HTTP/1.1" 200 -
+[2019-11-15 13:24:18,625] ERROR in app: Exception on /pihome [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: pihome() takes exactly 2 arguments (0 given)
+192.168.1.7 - - [15/Nov/2019 13:24:18] "GET /pihome HTTP/1.1" 500 -
+192.168.1.7 - - [15/Nov/2019 13:26:02] "GET / HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:30:50] "GET /volume HTTP/1.1" 200 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:30:54] "GET /volume/1 HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:30:54] "GET /favicon.ico HTTP/1.1" 404 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:30:57] "GET /volume/0 HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:30:57] "GET /favicon.ico HTTP/1.1" 404 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:31:23] "GET /volume/0 HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:25] "GET /volume HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:25] "GET /volume HTTP/1.1" 200 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:31:28] "GET /volume/1 HTTP/1.1" 200 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:31:29] "GET /volume/0 HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:30] "GET /brightness HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:30] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.7 - - [15/Nov/2019 13:31:31] "GET /youtube HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:31] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.7 - - [15/Nov/2019 13:31:32] "GET /brightness HTTP/1.1" 200 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:31:33] "GET /inc_brightnes HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:33] "GET /favicon.ico HTTP/1.1" 404 -
+sh: 1: osascript: not found
+192.168.1.7 - - [15/Nov/2019 13:31:38] "GET /dec_brightnes HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:31:38] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.7 - - [15/Nov/2019 13:47:20] "GET / HTTP/1.1" 200 -
+192.168.1.7 - - [15/Nov/2019 13:47:22] "GET / HTTP/1.1" 200 -
+[2019-11-15 13:47:24,044] ERROR in app: Exception on /pihome [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: pihome() takes exactly 2 arguments (0 given)
+192.168.1.7 - - [15/Nov/2019 13:47:24] "GET /pihome HTTP/1.1" 500 -
+192.168.1.7 - - [15/Nov/2019 13:48:58] "GET / HTTP/1.1" 200 -

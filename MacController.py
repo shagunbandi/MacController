@@ -18,14 +18,23 @@ gpio_status_dict = {
     2: False
 }
 
-@app.route('/pihome')
-def pihome(gpio_pin, gpio_status):
 
-    if gpio_pin is None or gpio_status is None:
-        return render_template("picontrol.html", fan_status="Unknown", light_status="Unknown")
+@app.route('/pihome')
+def pihome_no_par():
+    return render_template("picontrol.html", fan_status="Unknown", light_status="Unknown")
+
+@app.route('/pihome/<gpio_pin>/<gpio_status>')
+def pihome(gpio_pin=None, gpio_status=None):
+
+    gpio_pin = int(gpio_pin)
+    gpio_status = bool(gpio_status)
+
+    print(gpio_pin)
+    print(gpio_status)
+
     GPIO.setup(gpio_pin, GPIO.OUT)
     GPIO.output(gpio_pin, gpio_status)
-
+    print("Here")
     gpio_status_dict[gpio_pin] = not gpio_status
 
     return render_template("picontrol.html", fan_status=gpio_status_dict[2], light_status=gpio_status_dict[3])
@@ -191,7 +200,7 @@ def dec_brightnes():
 if __name__ == '__main__':
 	command = 'osascript -e "set Volume 3"'
 	os.system(command)
-	app.run('0.0.0.0')
+	app.run(host='0.0.0.0', port=5001)
 
 
 
