@@ -3,6 +3,7 @@ from flask import render_template, request, jsonify
 import os
 # from pynput.keyboard import Key, Controller
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 
@@ -11,13 +12,12 @@ play_status = 0
 
 @app.route('/pihome')
 def pihome():
-	return render_template("picontrol.html", value="Ready", status="Control Fan and Lights")
+    return render_template("picontrol.html", value="Ready", status="Control Fan and Lights")
 
 
 @app.route('/lightson')
 def lights_on():
-    command = "python scripts/lighton.py"
-
+    command = "python " + os.path.join(BASE_DIR, 'scripts/lighton.py')
     print(command)
     os.system(command)
 
@@ -26,7 +26,7 @@ def lights_on():
 
 @app.route('/lightsoff')
 def lights_off():
-    command = "python scripts/lightoff.py"
+    command = "python " + os.path.join(BASE_DIR, 'scripts/lightoff.py')
 
     print(command)
     os.system(command)
@@ -36,7 +36,7 @@ def lights_off():
 
 @app.route('/fanon')
 def fan_on():
-    command = "python scripts/fanon.py"
+    command = "python " + os.path.join(BASE_DIR, 'scripts/fanon.py')
 
     print(command)
     os.system(command)
@@ -47,7 +47,7 @@ def fan_on():
 @app.route('/fanoff')
 def fan_off():
 
-    command = "python scripts/fanoff.py"
+    command = "python " + os.path.join(BASE_DIR, 'scripts/fanoff.py')
 
     print(command)
     os.system(command)
