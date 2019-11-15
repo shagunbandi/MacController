@@ -29,13 +29,9 @@ def pihome_no_par():
 def pihome(gpio_pin=None, gpio_status=None):
 
     gpio_pin = int(gpio_pin)
-    gpio_status = bool(gpio_status)
 
-    print(gpio_pin)
-    print(gpio_status)
-
-    GPIO.output(gpio_pin, GPIO.HIGH if gpio_status else GPIO.LOW)
-    gpio_status_dict[gpio_pin] = not gpio_status
+    GPIO.output(gpio_pin, GPIO.HIGH if gpio_status=="False" else GPIO.LOW)
+    gpio_status_dict[gpio_pin] = gpio_status
 
     return render_template("picontrol.html", fan_status=gpio_status_dict[2], light_status=gpio_status_dict[3])
 
@@ -200,7 +196,7 @@ def dec_brightnes():
 if __name__ == '__main__':
 	command = 'osascript -e "set Volume 3"'
 	os.system(command)
-	app.run(host='0.0.0.0', port=5001)
+	app.run(host='0.0.0.0', port=5000)
 
 
 
