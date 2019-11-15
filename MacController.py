@@ -3,7 +3,6 @@ from flask import render_template, request, jsonify
 import os
 
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -12,45 +11,24 @@ app = Flask(__name__)
 volume_level = 3
 play_status = 0
 
+GPIO.setmode(GPIO.BCM)
+
+gpio_status_dict = {
+    3: False,
+    2: False
+}
+
 @app.route('/pihome')
-def pihome():
-    return render_template("picontrol.html", value="Ready", status="Control Fan and Lights")
+def pihome(gpio_pin, gpio_status):
 
+    if gpio_pin is None or gpio_status is None:
+        return render_template("picontrol.html", fan_status="Unknown", light_status="Unknown")
+    GPIO.setup(gpio_pin, GPIO.OUT)
+    GPIO.output(gpio_pin, gpio_status)
 
-@app.route('/lightson')
-def lights_on():
+    gpio_status_dict[gpio_pin] = not gpio_status
 
-    GPIO.setup(3, GPIO.OUT)
-    GPIO.output(3, False)
-
-    return render_template("picontrol.html", value="Ready", status="Lights On")
-
-
-@app.route('/lightsoff')
-def lights_off():
-
-    GPIO.setup(3, GPIO.OUT)
-    GPIO.output(3, True)
-
-    return render_template("picontrol.html", value="Ready", status="Lights Off")
-
-
-@app.route('/fanon')
-def fan_on():
-
-    GPIO.setup(2, GPIO.OUT)
-    GPIO.output(2, False)
-
-    return render_template("picontrol.html", value="Ready", status="Fan On")
-
-
-@app.route('/fanoff')
-def fan_off():
-
-    GPIO.setup(2, GPIO.OUT)
-    GPIO.output(2, True)
-
-    return render_template("picontrol.html", value="Ready", status="Fan Off")
+    return render_template("picontrol.html", fan_status=gpio_status_dict[2], light_status=gpio_status_dict[3])
 
 
 @app.route('/')
